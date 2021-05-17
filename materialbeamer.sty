@@ -47,7 +47,6 @@
 %%%
 %%% Definitions of inner theme (MODIFY THESE)
 %%%
-
 % Itemize items: default (triangle), circle, square, ball
 \setbeamertemplate{itemize items}[circle]
 
@@ -70,7 +69,10 @@
 \setbeamertemplate{navigation symbols}{}
 
 % Colors
+%\definecolor{sapred}{RGB}{130,36,51}
 \definecolor{sapblue}{RGB}{0,103,120}
+
+% Material Colors
 \definecolor{matred}{HTML}{F44336}
 \definecolor{matblue}{HTML}{2196F3}
 \definecolor{matbluelight}{HTML}{BBDEFB}
@@ -78,63 +80,61 @@
 \definecolor{hgray}{RGB}{176,184,190}	
 
 \setbeamercolor{structure}{fg = matbluedark}
-\setbeamercolor{frametitle}{parent=subsection in head/foot}
-\setbeamercolor{frametitle right}{parent=section in head/foot}
+%\setbeamercolor{frametitle}{parent=subsection in head/foot}
+%\setbeamercolor{frametitle right}{parent=section in head/foot}
 \definecolor{grey}{HTML}{51504A}
 \setbeamercolor{section in head/foot}{ bg=matbluedark, fg=white}
 \setbeamercolor{footline}{ bg=matbluedark}
 \setbeamercolor{title in head/foot}{bg=matbluedark, fg=white}
 
-\pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
- color(0pt)=(sapblue);
- color(\paperwidth)=(sapblue)}
+%\pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
+%  color(0pt)=(sapblue);
+%  color(\paperwidth)=(sapblue)}
 
-% SHADOWING
-% \AtBeginDocument{
-% \pgfdeclareverticalshading{b@matshade}{\the\paperwidth}
-%         {rgb(0pt)=(1,1,1); rgb(3pt)=(0.8,0.8,0.8);rgb(5pt)=(0.75,0.75,0.75)}
-% }
+%shadowing
+\AtBeginDocument{
+\pgfdeclareverticalshading{b@matshade}{\the\paperwidth}
+        {rgb(0pt)=(1,1,1); rgb(3pt)=(0.8,0.8,0.8);rgb(5pt)=(0.75,0.75,0.75)}
+}
 
-% % Footline: AUTHOR | TITLE | DATE FRAMENUMBER
-% \defbeamertemplate*{footline}{mat theme}{%
-% \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=2ex]{title in head/foot}%
-% % ht = width of footer blue bar
-% % dp = where text starts in the footer
-% \begin{minipage}[t]{0.48\textwidth}%
-% \hskip10pt\insertshortauthor%
-% \end{minipage}%
-% \begin{minipage}[t]{0.48\textwidth}%
-% %
-% \hfill\insertframenumber{} / \inserttotalframenumber\hskip10pt\vfill%
-% %
-% \end{minipage}%
-% \end{beamercolorbox}%
-% \vfill%
-% }
+% Footline: AUTHOR | TITLE | DATE FRAMENUMBER
+
+\defbeamertemplate*{footline}{mat theme}{%
+\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=2ex]{title in head/foot}%
+\begin{minipage}[t]{0.48\textwidth}%
+\hskip10pt\insertshortauthor%
+\end{minipage}%
+\begin{minipage}[t]{0.48\textwidth}%
+%
+\hfill\insertframenumber{} / \inserttotalframenumber\hskip10pt\vfill%
+%
+\end{minipage}%
+\end{beamercolorbox}%
+\vfill%
+}
 
 \usepackage{tcolorbox}  
-\tcbuselibrary{skins}  %  preamble 
-\usepackage{tikz}                                      
-\usetikzlibrary{shadows,shadings}                      
+\tcbuselibrary{skins}                                  %  preamble 
+\usepackage{tikz}                                      %
+\usetikzlibrary{shadows,shadings}                      %
 
-% ALL SLIDES
-% \tikzset{myshadow/.style={ % custom shadow with tikz
-%          opacity=.16,
-%          shadow xshift=0.01,
-%          shadow yshift=-0.02,
-%          shade,
-%          shading=axis,
-%          shading angle=230}
-%          } 
-\tcbset{                   % set a custom tcolorbox  
-        skin=enhanced,     % enables use of shadows
+\tikzset{myshadow/.style={                             % custom shadow with tikz
+         opacity=.16,
+         shadow xshift=0.01,
+         shadow yshift=-0.02,
+         shade,
+         shading=axis,
+         shading angle=230}
+         } 
+\tcbset{ % set a custom tcolorbox  
+        skin=enhanced, % enables use of shadows
         frame style={fill=matblue,drop shadow={myshadow}}, % sets the frame color and the shadow properties
-        bottom=5pt,        % distance between the body text and the bottom frame
-        top=5pt,           % distance between the body text and the top frame
-        boxrule=0mm,       % frame width
-        bottomtitle=2mm,   % distance between the title and the bottom title frame
-        toptitle=2mm,      % distance between the title text and the top title frame
-        lefttitle=10pt     % title text left margin
+        bottom=5pt, % distance between the body text and the bottom frame
+        top=5pt, % distance between the body text and the top frame
+        boxrule=0mm, % frame width
+        bottomtitle=2mm, % distance between the title text and the bottom title frame
+        toptitle=2mm, % distance between the title text and the top title frame
+        lefttitle=10pt % title text left margin
 }  
 
 \setbeamercolor{block body}{bg=matbluelight, fg=black}
@@ -145,68 +145,59 @@
 \defbeamertemplate*{block end}{mat theme}  
 {\end{tcolorbox}\vskip\smallskipamount}
 
+
 \defbeamertemplate*{headline}{mat theme}{%
   \leavevmode%
-    \begin{beamercolorbox}[wd=\paperwidth, ht=3ex,dp=2ex]{section in head/foot}%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=2ex]{section in head/foot}%
+       %\vskip5pt 
        \hskip10pt 
-       \insertshorttitle \hfill 
-  \insertsectionnavigationhorizontal{.5\textwidth}{\hskip0pt plus1filll}{}
+       \insertshorttitle \hfill \robotocondensed
+ \insertsectionnavigationhorizontal{.5\textwidth}{\hskip0pt plus1filll}{}
     \end{beamercolorbox}%
 }
 
-\setbeamercolor{titlebar}{fg=white,bg=matblue}%
-\defbeamertemplate*{frametitle}{mat theme}{%
-\nointerlineskip%
-  \leavevmode%
-    \begin{beamercolorbox}[wd=\paperwidth, ht=2.25ex,dp=1ex]{titlebar}%
-       \hskip10pt 
-       \insertframetitle
-    \end{beamercolorbox}%
-}
 
 \setbeamerfont{frametitle}{size=\normalsize, parent=structure}
-% \defbeamertemplate*{frametitle}{mat theme}{%
-% \nointerlineskip%
-% \setbeamercolor{titlebar}{fg=white,bg=matblue}%
-%     \begin{beamercolorbox}[wd=\paperwidth, ht=5ex]{titlebar}%
-%         %\hskip10pt 
-%         \robotocondensed\insertframetitle\vfill%
-%             \pgfuseshading{b@matshade}%
-%     \end{beamercolorbox}
-% }
+
+
+\defbeamertemplate*{frametitle}{mat theme}{%
+\nointerlineskip%
+\setbeamercolor{titlebar}{fg=white,bg=matblue}%
+\begin{beamercolorbox}[wd=\paperwidth, ht=5ex]{titlebar}%
+\hskip10pt \robotocondensed\insertframetitle\vfill%
+     \pgfuseshading{b@matshade}%
+\end{beamercolorbox}
+}
   
-% TITLE SLIDE
+  
+  
 \defbeamertemplate*{title page}{ru theme}[1][]
 {
+\nointerlineskip
 
-% TOP SECTION WHITE BACKGROUND
 \usebeamerfont{subtitle}
-
-\begin{beamercolorbox}[sep=1em,wd=\textwidth, ht=2.5cm, dp=0.25cm,right]{thead}
-% Columns to align logo and name horizontally
-\begin{columns}[c]
-
-\column{0.4\textwidth}
-\includegraphics[scale=.3]{figures/cumsph_logo.png}
-
-\column{0.2\textwidth}
-\hspace{1ex}
-
-\column{0.4\textwidth}
-\usebeamerfont{author} \par\insertauthor\par
+%\setbeamercolor{thead}{fg=white,bg=sapred}
+\begin{beamercolorbox}[sep=1em,wd=\paperwidth, ht=2.5cm, dp=0.5cm,right ]{thead}
+\usebeamerfont{author} \insertauthor\par
 \usebeamerfont{institute}\robotocondensed
-\insertinstitute\par
-\end{columns}
-
+\insertinstitute\par 
 \end{beamercolorbox}
-%\nointerlineskip
+\nointerlineskip
 
-% BOTTOM SECTION BLUE BACKGROUND
+
 \setbeamercolor{postit}{fg=white, bg=matblue}
-\begin{beamercolorbox}[sep=0.98cm,wd=\paperwidth,ht=5.25cm,dp=4.5cm,left]{postit}
-% increase ht to bring title down
-% Change ht & dp to make TITLE fit
-\usebeamerfont{title}{\huge\inserttitle}\par \ \par
-\usebeamerfont{subtitle}{\robotocondensed\insertsubtitle}\par
+\begin{beamercolorbox}[sep=1em,wd=\paperwidth,ht=3cm,dp=3cm,left]{postit}
+\begin{minipage}[t]{0.99\paperwidth}
+\usebeamerfont{title} {\Huge
+ \inserttitle} \par
+\usebeamerfont{subtitle} {\robotocondensed
+ \insertsubtitle}
+
+
+\end{minipage}%
+\begin{minipage}[t]{0.4\textwidth}
+\inserttitlegraphic
+\end{minipage}
 \end{beamercolorbox}
+%\setbeamercolor{postit}{fg=sapred}
 }
