@@ -1,0 +1,155 @@
+\documentclass{beamer}
+\usepackage{materialbeamer}
+
+% The title of the presentation:
+%  - first a short version which is visible at the top of each slide;
+%  - second the full title shown on the title slide;
+\title[Pattern Identification in Environmental Mixtures]{Statistical and Machine Learning Methods for Pattern Identification in Environmental Mixtures}
+
+% Optional: a subtitle to be displayed on the title slide
+\subtitle{{\it PhD Defense} \\ June 9, 2021}
+
+% The author(s) of the presentation:
+%  - again first a short version to be displayed at the bottom;
+%  - next the full list of authors, which may include contact information;
+\author[E.A. Gibson]{Elizabeth A. Gibson} 
+
+% The institute:
+%  - to start the name of the university as displayed on the top of each slide
+%  - next the institute information as displayed on the title slide
+\institute[EHS]{
+Environmental Health Sciences \\
+  Mailman School of Public Health \\
+  Columbia University}
+ 
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+ \frametitle{Table of Contents}
+ \begin{itemize}
+ {\color{matbluedark}
+     \item Background
+     \item Methods
+     \begin{itemize}
+     {\color{matbluedark}
+         \item PCP
+         \begin{itemize}
+         {\color{matbluedark}
+             \item Method
+             \item Simulations
+             \item Application}
+         \end{itemize}
+         \item \bnmf}
+         \begin{itemize}
+         {\color{matbluedark}
+             \item Method
+             \item Simulations
+             \item Application
+             \item Health model}
+         \end{itemize}
+     \end{itemize}
+     \item Conclusion
+     }
+ \end{itemize}
+\end{frame}
+
+\input{background/patterns}
+
+\input{pcp/pcp}
+\input{pcp/sims_p}
+\input{pcp/application_p}
+
+\input{bn2mf/bn2mf}
+\input{bn2mf/sims_b}
+\input{bn2mf/application_b}
+\input{bn2mf/health_model}
+
+\input{background/conclusion}
+
+\frame{\frametitle{Acknowledgements}
+
+\vspace{3mm}
+
+\begin{columns}
+
+\column{0.73\textwidth}  
+
+Columbia University: \\
+\begin{figure}
+	\begin{minipage}[t]{0.25\textwidth}
+		\includegraphics[height=0.5in]{figures/julie.jpg}  
+		\caption{Julie Herbstman Environmental Health}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.25\textwidth}
+		\includegraphics[height=0.5in]{figures/makPic.jpg}  
+		\caption[font=footnotesize]{Marianthi-Anna Kioumourtzoglou Environmental Health}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.25\textwidth}
+		\includegraphics[height=0.5in]{figures/jeff.jpeg}  
+		\caption{Jeff Goldsmith \\ Biostatistics}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.24\textwidth}
+		\includegraphics[height=0.5in]{figures/Paisley_highres_cropped.jpg}  
+		\caption{John Paisley \\ Electrical Engineering}
+	\end{minipage}
+\end{figure}
+
+PRIME Team: \\
+ 
+\begin{figure}
+	\begin{minipage}[t]{0.19\textwidth}
+		\includegraphics[height=0.45in]{figures/wright.jpg}  
+		\caption{John Wright \\ Electrical Engineering}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.19\textwidth}
+		\includegraphics[height=0.45in]{figures/yanelli.png}  
+		\caption{Yanelli N\'{u}\~{n}ez \\ Environmental Health}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.19\textwidth}
+		\includegraphics[height=0.45in]{figures/Jingkai2.jpg}  
+		\caption{Jingkai Yan \\ Electrical Engineering}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.19\textwidth}
+		\includegraphics[height=0.45in]{figures/RobertColgan.jpg}  
+		\caption{Robert Colgan \\ Computer Science}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.23\textwidth}
+		\includegraphics[height=0.45in]{figures/lawrence.jpeg}  
+		\caption{Lawrence Chillrud \\ Computer \\ Science}
+	\end{minipage}
+\end{figure}
+
+\column{0.35\textwidth}
+
+\begin{flushright}
+\includegraphics[scale=0.35]{figures/makLab_logo.jpg} \\ 
+\vspace{2mm}
+\scriptsize Mike He \\
+Maggie Li \\
+Robbie Parks \\
+Sebastian Rowland \\
+Jenni Shearston \\
+Rachel Tao \\
+
+\vspace{5mm}
+
+{\color{hgray}Supported by: \\
+NIEHS F31 ES030263 \& \\
+PRIME R01 ES028805 \\
+}
+
+\vspace{5mm}
+
+\scriptsize Contact info: \\
+\vspace{0.5ex}
+\hspace{-2ex}
+\href{mailto:e.a.gibson@columbia.edu}{\faEnvelopeO \hspace{0.25ex} \tt e.a.gibson@columbia.edu} \\
+\href{http://www.lizzy.codes}{\faGlobe \hspace{0.5ex} \tt www.lizzy.codes}
+\end{flushright}
+\end{columns}
+}
+\end{document}

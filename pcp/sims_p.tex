@@ -1,0 +1,38 @@
+\setlength{\parskip}{\baselineskip} 
+%\section{PCP}
+
+\frame{\frametitle{Simulations}
+\vspace{2ex}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+	\item Matrix size
+	\begin{itemize}
+		\item 1,000 $\times$ 20
+		\end{itemize}
+	\item Low rank structure
+	\begin{itemize}
+		\item Uniform distributions
+		\item Matrix product
+		\item Rank: 4
+		\end{itemize}
+	\item Added noise
+	\begin{itemize}
+		\item Gaussian
+		\item 0.6 $\times$ low rank SD
+		\end{itemize}
+	\item Values <LOD
+	\begin{itemize}
+		\item 0\%--90\%
+		\end{itemize}
+       	\end{itemize}
+
+\column{0.5\textwidth}
+
+\begin{center}
+      \only<1>{\includegraphics[scale = 0.325]{figures/jsm_corr.pdf}}
+      \only<2>{\includegraphics[scale = 0.325]{figures/jsm_hist.pdf}}
+\end{center}
+\end{columns}
+
+}

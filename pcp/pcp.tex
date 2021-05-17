@@ -1,0 +1,64 @@
+\setlength{\parskip}{\baselineskip} 
+\section{PCP}
+
+\frame{
+\frametitle{Principal Component Pursuit}
+\begin{itemize}
+    \item Robust Principal Component Analysis (PCA)
+    \item Data dimensionality reduction method adapted from computer vision
+    \item Decomposes design matrix into low rank and sparse
+    \begin{itemize}
+        \item {\color{matbluedark}Low rank matrix} estimates consistent exposure patterns
+        \item {\color{matbluedark}Sparse matrix} identifies unique events \\
+        $$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S-X\|_{F}^{2}$$
+    \end{itemize}
+    \item Robust to noisy/corupt data
+    \begin{itemize}
+        \item Not influenced by outlying values
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{
+\frametitle{PCP image example}
+
+\vspace{-1.75ex}
+\begin{center}
+
+\begin{tabular}{ccc}
+Original & $\widehat{L_0}$ & $\widehat{S_0}$\\
+\includegraphics[scale=0.3]{figures/figure_mall_ori_1.pdf} &
+\includegraphics[scale=0.3]{figures/figure_mall_L_1.pdf} &
+\includegraphics[scale=0.3]{figures/figure_mall_S_1.pdf} \\
+
+\includegraphics[scale=0.3]{figures/figure_mall_ori_2.pdf} &
+\includegraphics[scale=0.3]{figures/figure_mall_L_2.pdf} &
+\includegraphics[scale=0.3]{figures/figure_mall_S_2.pdf} \\
+
+\includegraphics[scale=0.3]{figures/figure_mall_ori_3.pdf} &
+\includegraphics[scale=0.3]{figures/figure_mall_L_3.pdf} &
+\includegraphics[scale=0.3]{figures/figure_mall_S_3.pdf} \\
+\end{tabular}
+
+\end{center}
+}
+
+\frame{
+\frametitle{PCP Extensions}
+\begin{itemize}
+    \item Non-negativity constraint on low rank matrix
+    \item Novel penalties for values < LOD
+    \begin{itemize}
+        \item Observed value < LOD \& predicted value > LOD
+
+$$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S-LOD\|_{F}^{2}$$
+
+        \item Observed value < LOD \& predicted value < 0
+        
+$$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S\|_{F}^{2}$$    
+        \item Observed value < LOD \& predicted value [0 -- LOD]
+        
+$$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1}$$
+    \end{itemize}
+\end{itemize}
+}

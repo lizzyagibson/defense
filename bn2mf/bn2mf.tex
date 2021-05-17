@@ -1,0 +1,31 @@
+\setlength{\parskip}{\baselineskip} 
+\section{\bnmf}
+
+
+\frame{
+\frametitle{Bayesian non-parametric non-negative matrix factorization (BN$^{2}$MF)}
+
+\centering\includegraphics[scale = 0.325]{figures/decomp.png}
+
+\begin{itemize}
+\item[$\checkmark$] Non-negative continuous Gamma priors 
+\begin{itemize}
+    \item[$\checkmark$] Sparse prior on patterns estimates number
+\end{itemize}
+\item[$\checkmark$] No orthogonality constraint
+\item[$\checkmark$] Variational confidence intervals
+\end{itemize}
+}
+
+\frame{
+\frametitle{Non-parametric Bayesian Non-negative Matrix Factorization}
+$$ X_{i j} \sim \operatorname{Poisson}\left(\sum_{k=1}^{K} H_{i k} (a_k) W_{k j}\right)$$
+$$i=1 \ldots n,  j=1 \ldots p,  k = 1 \ldots K$$
+$$ H_{i k} \sim \operatorname{Gamma}(1, 1), 
+\space a_k \sim \operatorname{Gamma}(1 / K, 1), 
+\space W_{k j} \sim \operatorname{Gamma}(1, 1) $$
+\vspace{1ex}
+$$ \underbrace{\Prob{H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Posterior}}
+    \propto \underbrace{\Prob{x \mid H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Likelihood}}
+    \times \underbrace{\Prob{H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Prior}} $$
+}
