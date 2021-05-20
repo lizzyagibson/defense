@@ -26,9 +26,14 @@
 \usepackage{graphicx}
 \usepackage[font=tiny,skip=2pt]{caption}
 \captionsetup[figure]{labelformat=empty}
+\usepackage[outline]{contour}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{emoji}
+\usepackage{svg}
+\usepackage{bold-extra}
 
 % My notation
-\newcommand{\aritem}{{\color{matbluedark}$\rightarrow$}}
 \newcommand{\PM}{PM$_{2.5}$ }
 \newcommand{\mugm}{$\mu$g/m$^3$}
 \newcommand{\bnmf}{BN$^{2}$MF }
@@ -42,6 +47,7 @@
 \newcommand{\Var}{\text{Var}\,}
 \newcommand{\prob}{\ensuremath{\mathbb P}}
 \newcommand{\Prob}[1]{\ensuremath{\prob\Paren{#1}}}
+\newcommand{\aritem}{{\color{matbluedark}$\mathbf{\rightarrow}$}}
 
 %%%
 %%% Definitions of inner theme (MODIFY THESE)
@@ -128,16 +134,16 @@
          shading=axis,
          shading angle=230}
          } 
-\tcbset{                                               % set a custom tcolorbox  
-        skin=enhanced,                                 % enables use of shadows
-        frame style={fill=matblue,drop shadow={myshadow}}, % sets the frame color and the shadow properties
-        bottom=5pt,                                    % distance between the body text and the bottom frame
-        top=5pt,                                      % distance between the body text and the top frame
-        boxrule=0mm,                                   % frame width
-        bottomtitle=2mm,                               % distance between the title text and the bottom title frame               
-        toptitle=2mm,                                  % distance between the title text and the top title frame
-        lefttitle=10pt                                  % title text left margin
-}  
+% \tcbset{% set a custom tcolorbox  
+%         skin=enhanced, % enables use of shadows
+%         frame style={fill=matblue,drop shadow={myshadow}}, % sets the frame color and the shadow properties
+%         bottom=5pt, % distance between the body text and the bottom frame
+%         top=5pt, % distance between the body text and the top frame
+%         boxrule=0mm, % frame width
+%         bottomtitle=2mm, % distance between the title text and the bottom title frame               
+%         toptitle=2mm, % distance between the title text and the top title frame
+%         lefttitle=10pt % title text left margin
+% }  
 
 \setbeamercolor{block body}{bg=matbluelight, fg=black}
 \defbeamertemplate*{block begin}{mat theme}
@@ -168,6 +174,21 @@
 \end{beamercolorbox}
 }
   
+% Set width of all slides
+% \setbeamersize{text margin left=5pt,text margin right=5pt}
+
+% Change margin env
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+ 
 % TITLE SLIDE
 \defbeamertemplate*{title page}{ru theme}[1][]
 {

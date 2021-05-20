@@ -1,2 +1,59 @@
 \setlength{\parskip}{\baselineskip} 
 %\section{PCP}
+
+\frame{\frametitle{PCP-LOD application}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{itemize}
+    \item {\color{matbluedark}\textbf{Study Population}}
+    \begin{itemize}
+        \item NHANES 2001 -- 2002 
+        \item N = 1000 US adults 
+    \end{itemize}
+    \item {\color{matbluedark}\textbf{Mixture of interest}} 
+    \begin{itemize}
+        \item 35 persistent organic pollutants 
+        \item PCBs, dioxins, \& furans 
+    \end{itemize}
+    \item {\color{matbluedark}\textbf{Research questions}} 
+    \begin{itemize}
+        \item Are there patterns of POP exposure?
+        \item Do patterns correspond with known sources or behaviors leading to exposure?
+    \end{itemize}
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{center}
+    \includegraphics[scale = 0.275]{figures/nhanes_apple_color_tagline.jpg}
+\end{center}
+\end{columns}
+}
+
+\frame{\frametitle{PCP-LOD application: POP detection}
+\begin{center}
+	\includegraphics[scale=0.28]{figures/pcp/pop_detect.pdf}
+\end{center}
+}
+
+\frame{\frametitle{PCP-LOD application: POP correlation}
+\vspace{-1em}
+\begin{center}
+	\includegraphics[scale=0.425]{figures/pcp/nhanes_raw_corr.pdf}
+\end{center}
+}
+
+% low rank
+\frame{\frametitle{NHANES results: 3 underlying patterns of POP exposure}
+\vspace{-1.25ex}
+\begin{center}
+	\includegraphics[scale=0.28]{figures/pcp/loadings.pdf}
+\end{center}
+}
+
+% sparse
+\frame{\frametitle{NHANES results: Sparse events not explained by patterns}
+\vspace{-1.25ex}
+\begin{center}
+	\includegraphics[scale=0.32]{figures/pcp/sparse_events.pdf}
+\end{center}
+}

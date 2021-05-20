@@ -1,8 +1,54 @@
 \setlength{\parskip}{\baselineskip} 
 \section{PCP}
 
+% \begin{frame}
+%  \frametitle{Table of Contents}
+% {\begin{itemize}
+%  {\color{gray}
+%      \item {Background}}
+%      {\color{matbluedark}
+%          \item \textbf{PCP}}
+%          \begin{itemize}
+%          {\color{gray}
+%              \item Method
+%              \item Simulations
+%              \item Application}
+%          \end{itemize}
+%           {\color{gray}
+%          \item \bnmf}
+%          \begin{itemize}
+%          {\color{gray}
+%              \item Method
+%              \item Simulations
+%              \item Application
+%              \item Health model}
+%          \end{itemize}
+%      {\color{gray}
+%      \item Conclusion
+%      }
+%  \end{itemize}}
+% \end{frame}
+
 \frame{
-\frametitle{Principal Component Pursuit}
+\frametitle{Principal component pursuit}
+\begin{columns}
+\column{.6\textwidth}
+\centering\color{matbluedark}{\LARGE\texttt{\textbf{BIG PICTURE}}}
+\vspace{.5\baselineskip}
+\begin{itemize}
+         \item Patterns not influenced by outliers
+         \item Extreme events separated, not discarded
+         \item Novel $<$ LOD penalty
+         \item Potential for enhanced interpretability
+         \item Cross-validation to choose $k$
+        \end{itemize}
+\column{.4\textwidth}
+\centering\includesvg[scale=0.35]{figures/robot-svgrepo-com.svg}
+\end{columns}
+}
+
+\frame{
+\frametitle{Principal component pursuit}
 \begin{itemize}
     \item Robust Principal Component Analysis (PCA)
     \item Data dimensionality reduction method adapted from computer vision
@@ -27,38 +73,66 @@
 
 \begin{tabular}{ccc}
 Original & $\widehat{L_0}$ & $\widehat{S_0}$\\
-\includegraphics[scale=0.3]{figures/figure_mall_ori_1.pdf} &
-\includegraphics[scale=0.3]{figures/figure_mall_L_1.pdf} &
-\includegraphics[scale=0.3]{figures/figure_mall_S_1.pdf} \\
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_ori_1.pdf} &
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_L_1.pdf} &
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_S_1.pdf} \\
 
-\includegraphics[scale=0.3]{figures/figure_mall_ori_2.pdf} &
-\includegraphics[scale=0.3]{figures/figure_mall_L_2.pdf} &
-\includegraphics[scale=0.3]{figures/figure_mall_S_2.pdf} \\
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_ori_2.pdf} &
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_L_2.pdf} &
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_S_2.pdf} \\
 
-\includegraphics[scale=0.3]{figures/figure_mall_ori_3.pdf} &
-\includegraphics[scale=0.3]{figures/figure_mall_L_3.pdf} &
-\includegraphics[scale=0.3]{figures/figure_mall_S_3.pdf} \\
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_ori_3.pdf} &
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_L_3.pdf} &
+\includegraphics[scale=0.3]{figures/pcp/figure_mall_S_3.pdf} \\
 \end{tabular}
 
 \end{center}
 }
 
-\frame{
-\frametitle{PCP Extensions}
+\frame{\frametitle{PCP extensions}
 \begin{itemize}
+    \item Square root formulation of error term
+    \item Non-convex rank penalty on low rank matrix
     \item Non-negativity constraint on low rank matrix
-    \item Novel penalties for values < LOD
-    \begin{itemize}
-        \item Observed value < LOD \& predicted value > LOD
-
-$$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S-LOD\|_{F}^{2}$$
-
-        \item Observed value < LOD \& predicted value < 0
-        
-$$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S\|_{F}^{2}$$    
-        \item Observed value < LOD \& predicted value [0 -- LOD]
-        
-$$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1}$$
-    \end{itemize}
+    \item Novel penalties for values < LOD (PCP-LOD)
 \end{itemize}
 }
+
+\frame{\frametitle{PCP extensions}
+\begin{itemize}
+    \item Observed value > LOD
+    \vspace{-1ex}
+        \begin{align}
+        \min_{L, S}\mathbbm{1}_{rank(L) \le r} + \lambda\|S\|_{1} + \mu\|L+S-X\|_{F}
+        \end{align}
+    \vspace{-1.5em}
+    \item Observed value < LOD \& predicted value > LOD
+    \vspace{-1ex}
+        \begin{align}
+        \min_{L, S}\mathbbm{1}_{rank(L) \le r} + \lambda\|S\|_{1} + \mu\|L+S-\delta\|_{F}
+        \end{align}
+    \vspace{-1.5em}
+    \item Observed value < LOD \& predicted value < 0
+    \vspace{-1ex}
+    \begin{align}
+    \hspace{-2em}\min_{L, S} \mathbbm{1}_{rank(L) \le r} + \lambda\|S\|_{1} + \mu\|L+S\|_{F}
+    \end{align}
+    \vspace{-1.5em}
+    \item Observed value < LOD \& predicted value [0 -- LOD]
+    \vspace{-1ex}
+    \begin{align}
+    \hspace{-8em}\min_{L, S} \mathbbm{1}_{rank(L) \le r} + \lambda\|S\|_{1}
+    \end{align}
+\end{itemize}
+}
+
+% \frame{\frametitle{PCP extensions (plain English)}
+% \begin{itemize}
+%     \item No need to tune hyper-parameters
+%     \item No need to impute values $<$ LOD
+%     \item Strong underlying structure not assumed
+%     \item Enhanced interpretability
+% \end{itemize}
+% \vspace{1em}
+% $\Longrightarrow$
+% {\color{matbluedark}\textbf{Better performance on environmental data}}}

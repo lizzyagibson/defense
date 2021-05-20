@@ -8,31 +8,54 @@
 \begin{itemize}
 	\item Matrix size
 	\begin{itemize}
-		\item 1,000 $\times$ 20
+		\item 500 $\times$ 16
 		\end{itemize}
 	\item Low rank structure
 	\begin{itemize}
-		\item Uniform distributions
+		\item Scores: $\operatorname{lognormal}(0,1)$
+		\item Loading: proportions
 		\item Matrix product
 		\item Rank: 4
 		\end{itemize}
 	\item Added noise
 	\begin{itemize}
-		\item Gaussian
-		\item 0.6 $\times$ low rank SD
+		\item Low $\ \mathcal{N}(0,1)$
+		\item High $\ \mathcal{N}(0,5)$
+		\item Low + sparse events
 		\end{itemize}
-	\item Values <LOD
+	\item Values $<$ LOD
 	\begin{itemize}
-		\item 0\%--90\%
+		\item 25\%, 50\%, 75\%
 		\end{itemize}
        	\end{itemize}
 
 \column{0.5\textwidth}
 
 \begin{center}
-      \only<1>{\includegraphics[scale = 0.325]{figures/jsm_corr.pdf}}
-      \only<2>{\includegraphics[scale = 0.325]{figures/jsm_hist.pdf}}
+      \only<1>{\includegraphics[scale = 0.3]{figures/pcp/scores_plot.pdf}}      \only<2>{\includegraphics[scale = 0.14]{figures/pcp/loadings_plot.pdf}}
+      \only<3>{\includegraphics[scale = 0.35]{figures/patscore.png}}
+      \only<4>{\includegraphics[scale = 0.3]{figures/pcp/sim_corr.pdf}}
 \end{center}
 \end{columns}
+}
 
+\frame{\frametitle{Relative error overall}
+\vspace{-1ex}
+\begin{center}
+	\includegraphics[scale=0.42]{figures/pcp/sim_boxplots_16.pdf}
+\end{center}
+}
+
+\frame{\frametitle{Relative error by LOD}
+\vspace{-1.25ex}
+\begin{center}
+	\includegraphics[scale=0.29]{figures/pcp/lod_boxplots_16.pdf}
+\end{center}
+}
+
+\frame{\frametitle{Relative error on scores}
+\vspace{-1.25ex}
+\begin{center}
+	\includegraphics[scale=0.29]{figures/pcp/svd_boxplots_left.pdf}
+\end{center}
 }

@@ -1,6 +1,62 @@
 \setlength{\parskip}{\baselineskip} 
 \section{\bnmf}
 
+% \begin{frame}
+%  \frametitle{Table of Contents}
+% {\begin{itemize}
+%  {\color{gray}
+%      \item {Background}}
+%      {\color{gray}
+%          \item {PCP}}
+%          \begin{itemize}
+%          {\color{gray}
+%              \item Method
+%              \item Simulations
+%              \item Application}
+%          \end{itemize}
+%           {\color{matbluedark}
+%          \item \textbf{\bnmf}}
+%          \begin{itemize}
+%          {\color{gray}
+%              \item Method
+%              \item Simulations
+%              \item Application
+%              \item Health model}
+%          \end{itemize}
+%      {\color{gray}
+%      \item Conclusion
+%      }
+%  \end{itemize}}
+% \end{frame}
+
+
+% 	\item[\checkmark] Non-parametric prior on $k$ helps with model selection
+% 	\item[\checkmark] Bayesian framework allows uncertainty propagation
+%       	\end{itemize}
+% }
+
+\frame{
+\frametitle{Bayesian non-parametric non-negative matrix factorization (BN$^{2}$MF)}
+\begin{columns}
+\column{.6\textwidth}
+\centering\color{matbluedark}{\LARGE\texttt{\textbf{BIG PICTURE}}}
+\vspace{.5\baselineskip}
+\begin{itemize}
+         \item Enhanced interpretability
+         \begin{itemize}
+	\item Parts-based (additive) {\color{matbluedark}non-negative} representation
+    \item No orthogonality constraint
+	\end{itemize}
+         \item Non-parametric prior chooses $k$
+         \item Quantifies uncertainty
+         \begin{itemize}
+	\item[\rightarrow] To propagate into health model
+	\end{itemize}
+        \end{itemize}
+\column{.4\textwidth}
+\centering\includesvg[scale=0.35]{figures/robot-svgrepo-com.svg}
+\end{columns}
+}
 
 \frame{
 \frametitle{Bayesian non-parametric non-negative matrix factorization (BN$^{2}$MF)}
@@ -9,23 +65,23 @@
 
 \begin{itemize}
 \item[$\checkmark$] Non-negative continuous Gamma priors 
-\begin{itemize}
-    \item[$\checkmark$] Sparse prior on patterns estimates number
-\end{itemize}
-\item[$\checkmark$] No orthogonality constraint
+\item[$\checkmark$] Sparse non-parametric prior on $k$ estimates pattern number
 \item[$\checkmark$] Variational confidence intervals
+\begin{itemize}	
+\item[\aritem] Bayesian framework allows uncertainty propagation
+      	\end{itemize}
 \end{itemize}
 }
 
-\frame{
-\frametitle{Non-parametric Bayesian Non-negative Matrix Factorization}
-$$ X_{i j} \sim \operatorname{Poisson}\left(\sum_{k=1}^{K} H_{i k} (a_k) W_{k j}\right)$$
-$$i=1 \ldots n,  j=1 \ldots p,  k = 1 \ldots K$$
-$$ H_{i k} \sim \operatorname{Gamma}(1, 1), 
-\space a_k \sim \operatorname{Gamma}(1 / K, 1), 
-\space W_{k j} \sim \operatorname{Gamma}(1, 1) $$
-\vspace{1ex}
-$$ \underbrace{\Prob{H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Posterior}}
-    \propto \underbrace{\Prob{x \mid H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Likelihood}}
-    \times \underbrace{\Prob{H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Prior}} $$
-}
+% \frame{
+% \frametitle{Non-parametric Bayesian Non-negative Matrix Factorization}
+% $$ X_{i j} \sim \operatorname{Poisson}\left(\sum_{k=1}^{K} H_{i k} (a_k) W_{k j}\right)$$
+% $$i=1 \ldots n,  j=1 \ldots p,  k = 1 \ldots K$$
+% $$ H_{i k} \sim \operatorname{Gamma}(1, 1), 
+% \space a_k \sim \operatorname{Gamma}(1 / K, 1), 
+% \space W_{k j} \sim \operatorname{Gamma}(1, 1) $$
+% \vspace{1ex}
+% $$ \underbrace{\Prob{H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Posterior}}
+%     \propto \underbrace{\Prob{x \mid H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Likelihood}}
+%     \times \underbrace{\Prob{H, \operatorname{diag}(\mathbf{a}), W}}_{\text{Prior}} $$
+% }

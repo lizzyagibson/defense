@@ -1,49 +1,46 @@
 \setlength{\parskip}{\baselineskip} 
 %\section{\bnmf}
 
-\frame{
-\frametitle{Simulations}
-\begin{itemize}
-    \item Simulate data generating process
-    \begin{enumerate}
-    \item Simulate patterns
-    \item Simulate scores
-    \item Multiply scores $\times$ patterns
-    \item Add noise
-    \end{enumerate}
-    \item Increasing complexity:
-    \begin{itemize}
-        \item Distinct patterns, independent scores
-        \item Overlapping patterns, independent scores
-        \item Overlapping patterns, correlated scores
-    \end{itemize}
-\end{itemize}
-}
-
-\frame{
-\frametitle{Results: simulation study}
-\vspace{3ex}
+\frame{\frametitle{Simulations}
+\vspace{2ex}
 \begin{columns}
-\column{.33\textwidth}
-{\includegraphics[scale = 0.2]{figures/prime_error.pdf}}
-\column{.33\textwidth} 
-{\includegraphics[scale = 0.2]{figures/prime_score.pdf}}
-\column{.33\textwidth}
-{\includegraphics[scale = 0.2]{figures/prime_load.pdf}}
-\end{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+	\item Matrix size
+	\begin{itemize}
+		\item 1,000 $\times$ 40
+		\end{itemize}
+	\item Low rank structure
+	\begin{itemize}
+		\item Scores: $\operatorname{lognormal}(0,1)$
+		\item Loading: proportions
+		\begin{itemize}
+		    \item[\aritem] Increasing complexity
+		\end{itemize}
+		\item Matrix product
+		\item Rank: 4
+		\end{itemize}
+	\item Increasing noise
+	\begin{itemize}
+		\item Low $\longrightarrow$ High
+		\end{itemize}
+\end{itemize}
 
+\column{0.5\textwidth}
+
+\begin{center}
+{\includegraphics[scale = 0.3]{figures/bn2mf/sim_corr_bn2mf.pdf}}
+\end{center}
+\end{columns}
 }
 
 \frame{
-\frametitle{Conclusion}
-\begin{itemize}
-	\item Increased interpretability due to:
-	\begin{itemize}
-	\item Parts-based (additive) {\color{matbluedark}\textbf{non-negative}} representation of multi-pollutant mixtures
-    \item Absence of orthogonality constraint on loadings and scores
-	\end{itemize}
-	\item[\checkmark] Non-parametric prior on $k$ helps with model selection
-	\item[\checkmark] Bayesian framework allows uncertainty propagation
-	\item Application to real environmental data can identify sensible patterns
-       	\end{itemize}
+\frametitle{Relative overall error}
+\vspace{-1ex}
+\centering{\includegraphics[scale = 0.4]{figures/bn2mf/prez_error.pdf}}
+}
+
+\frame{
+\frametitle{95\% variational confidence interval coverage}
+\centering{\includegraphics[scale = 0.4]{figures/bn2mf/coverage_heat_crop.pdf}}
 }
