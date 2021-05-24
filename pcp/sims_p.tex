@@ -12,50 +12,48 @@
 		\end{itemize}
 	\item Low rank structure
 	\begin{itemize}
-		\item Scores: $\operatorname{lognormal}(0,1)$
-		\item Loading: proportions
-		\item Matrix product
 		\item Rank: 4
 		\end{itemize}
 	\item Added noise
 	\begin{itemize}
-		\item Low $\ \mathcal{N}(0,1)$
-		\item High $\ \mathcal{N}(0,5)$
-		\item Low + sparse events
+		\item Low \& high
+		\item Added sparse events
 		\end{itemize}
 	\item Values $<$ LOD
 	\begin{itemize}
 		\item 25\%, 50\%, 75\%
 		\end{itemize}
+	\item Compared with PCA
        	\end{itemize}
 
 \column{0.5\textwidth}
-
+\vspace{2em}
 \begin{center}
-      \only<1>{\includegraphics[scale = 0.3]{figures/pcp/scores_plot.pdf}}      \only<2>{\includegraphics[scale = 0.14]{figures/pcp/loadings_plot.pdf}}
-      \only<3>{\includegraphics[scale = 0.35]{figures/patscore.png}}
-      \only<4>{\includegraphics[scale = 0.3]{figures/pcp/sim_corr.pdf}}
+      %\only<1>{\includegraphics[height=5cm]{figures/pcp/scores_plot.pdf}}
+      \only<1>{\includegraphics[height=5cm]{figures/pcp/loadings_plot.pdf}}
+      %\only<2>{\includegraphics[height=5cm]{figures/patscore2.png}}
+      \only<2>{\includegraphics[height=5cm]{figures/pcp/sim_corr.pdf}}
 \end{center}
 \end{columns}
 }
 
-\frame{\frametitle{Relative error overall}
+\frame{\frametitle{Simulation results: Relative error overall}
 \vspace{-1ex}
 \begin{center}
 	\includegraphics[scale=0.42]{figures/pcp/sim_boxplots_16.pdf}
 \end{center}
 }
 
-\frame{\frametitle{Relative error by LOD}
+\frame{\frametitle{Simulation results: Relative error by LOD}
 \vspace{-1.25ex}
 \begin{center}
 	\includegraphics[scale=0.29]{figures/pcp/lod_boxplots_16.pdf}
 \end{center}
 }
 
-\frame{\frametitle{Relative error on scores}
-\vspace{-1.25ex}
-\begin{center}
-	\includegraphics[scale=0.29]{figures/pcp/svd_boxplots_left.pdf}
-\end{center}
-}
+% \frame{\frametitle{Simulation results: Relative error on loadings \& scores}
+% \vspace{-1.25ex}
+% \begin{center}
+% 	\includegraphics[scale=0.29]{figures/pcp/svd_boxplots_16.pdf}
+% \end{center}
+% }

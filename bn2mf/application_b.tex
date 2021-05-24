@@ -5,6 +5,7 @@
 	\frametitle{\bnmf application}
 \begin{columns}
 \column{0.6\textwidth}
+\vspace{1em}
 \begin{itemize}
     \item {\color{matbluedark}\textbf{Study Population}}
     \begin{itemize}
@@ -40,4 +41,84 @@
 \vspace{5ex}
 \hspace{-1em}	
 \includegraphics[scale=0.65]{figures/bn2mf/prez_eh_loadings.pdf}
+}
+
+\frame{
+	\frametitle{Patterns represent known exposure sources}
+\begin{columns}[t]
+\column{0.5\textwidth}
+\vspace{-1.5em}
+\LARGE
+\begin{center}
+Pattern 1:
+\end{center}
+\column{0.5\textwidth}
+\vspace{-1.5em}
+\LARGE
+\begin{center}
+Pattern 2:
+\end{center}
+\end{columns}
+\vspace{1ex}
+\begin{changemargin}{-1.5em}{-1.5em}
+\begin{columns}
+\column{0.5\textwidth}
+\LARGE
+\begin{tcolorbox}[boxsep=-1ex,boxrule=2pt,colframe=matbluedark, colback=white,height=4.75cm]
+\begin{center}
+\vspace{1ex}
+\includegraphics[height=4.25cm]{figures/bn2mf/cloud1.pdf}
+\end{center}
+\end{tcolorbox}
+\column{0.5\textwidth}
+\LARGE
+\begin{tcolorbox}[boxsep=-1ex,boxrule=2pt,colframe=cloudorange, colback=white,height=4.75cm]
+\begin{center}
+\vspace{1ex}
+\includegraphics[height=4.25cm]{figures/bn2mf/cloud2.pdf}
+\end{center}
+\end{tcolorbox}
+\end{columns}
+\end{changemargin}
+\vspace{-1ex}
+\begin{columns}[b]
+\column{0.5\textwidth}
+\LARGE
+\begin{center}
+\large
+\textbf{$\Rightarrow$ Food packaging}
+\end{center}
+\column{0.5\textwidth}
+\large
+\begin{center}
+\textbf{$\Rightarrow$ Personal care products}
+\end{center}
+\end{columns}
+}
+
+\frame{
+\frametitle{Bayesian non-parametric non-negative matrix factorization (BN$^{2}$MF)}
+\begin{columns}
+\column{.6\textwidth}
+\ \\
+\vspace{2em}
+\centering\color{matbluedark}{\LARGE\texttt{\textbf{BIG PICTURE}}}
+\vspace{.5\baselineskip}
+\begin{itemize}
+         \item Enhanced interpretability
+         \begin{itemize}
+	\item Parts-based (additive) {\color{matbluedark}non-negative} representation
+    \item No orthogonality constraint
+	\end{itemize}
+         \item Non-parametric prior chooses $k$
+         \item Quantifies uncertainty
+         \begin{itemize}
+	\item[\rightarrow] To propagate into health model
+	\end{itemize}
+        \end{itemize}
+\column{.4\textwidth}
+\ \\
+\vspace{2em}
+\centering\includesvg[scale=0.35]{figures/robot-svgrepo-com.svg}
+\end{columns}
 }

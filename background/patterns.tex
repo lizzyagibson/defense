@@ -36,44 +36,48 @@
     \end{itemize}
 \column{0.5\textwidth}
 \begin{center}
-	\includegraphics[scale=0.275]{figures/europa_image.png} \\
+\begin{changemargin}{-1.5em}{-1em}
+	\includegraphics[scale=0.325]{figures/europa_image.png} \\
+\end{changemargin}
+\vspace{-1em}
 \raggedleft
-	{\tiny\color{hgray}Image: ec.europa.eu via Yanelli N\'{u}\~{n}ez}
+{\tiny\color{hgray}European Union, 2018}
 \end{center}
 \end{columns}
 }
 
-\frame{
-\frametitle{Mixture exposure \textit{in utero}}
+\frame[c]{
+\frametitle{Endocrine disrupting chemicals as a mixture}
 \begin{columns}
-\column{.5\textwidth}
+\column{.45\textwidth}
+\vspace{1em}
+\begin{changemargin}{-1em}{0em}
 \begin{itemize}
-    \item Exposure in humans unique to each individual
-    \item Pregnant women especially vulnerable
-    \item Gestation a critical period of brain development
-    \item Prenatal exposures \aritem \  cognitive deficits in children
+    \item Defined by biological mechanism
+    \item Interfere with hormonal systems
+    \item Disrupt processes critical for brain development
+    \vspace{1em}
+    \item Ubiquitous environmental exposure
+    \begin{itemize}
+        \item Consumer products
+        \item Industrial products
+        \item Often highly correlated
+    \end{itemize}
 \end{itemize}
-\column{.5\textwidth}
-\vspace{-2em}
-{\includegraphics[scale = 0.35]{figures/bn2mf/prenatal.png}}
+\end{changemargin}
+\column{.55\textwidth}
+\begin{changemargin}{-1em}{0em}
+%\vspace{1em}
+\begin{center}
+{\includegraphics[scale = 0.23]{figures/un_edc.pdf}}
+\end{center}
+\vspace{-0.5ex}
+\begin{flushright}
+\tiny{\color{hgray}{U.N. Environmental Programme, 2017}}\phantom{x}
+\end{flushright}
+\end{changemargin}
 \end{columns}
 }
-
-\frame{
-\frametitle{Mixture population-level effect}
-%\vspace{-0.5em}
-\begin{center}
-{\includegraphics[scale = 0.39]{figures/bn2mf/braun.png}}
-\end{center}
-\vspace{-3.5em}
-\begin{flushright}
-\scriptsize{\color{hgray}{Braun et al., 2017}}
-\end{flushright}
-\vspace{-1.5em}
-\hspace{1em}
-\centering{\normalsize\textbf{\emph{Small downward shift has substantial population impact}}}
-}
-
 
 \frame{
 \frametitle{Potential questions in mixtures analyses}
@@ -105,7 +109,7 @@
 	\frametitle{Exposure pattern recognition}
 	\begin{columns}
 		\column{0.4\textwidth}
-		\begin{changemargin}{-1em}{-2em}
+		\begin{changemargin}{0em}{-2em}
 		\begin{itemize}
 			\item Why should we care about identifying {\color{matbluedark}exposure patterns} to chemicals in a population?
 			\begin{itemize}
@@ -151,11 +155,12 @@
         \end{itemize}
 \vspace{1em}
 \centering$\Longrightarrow$ Proposed solutions: \\
+\vspace{1ex}
 {\tt\color{matbluedark}\textbf{Principal component pursuit \&}} \\
 {\tt\color{matbluedark}\textbf{Bayesian non-parametric non-negative matrix factorization}}
 \column{0.5\textwidth}
 \ \\
-\vspace{1.5em}
+\vspace{1em}
 %\centering
 \begin{tikzpicture}[mindmap, grow cyclic,scale=0.5]
 		\begin{scope}[mindmap, concept color = matbluedark, text = white, 
@@ -163,12 +168,12 @@
 		level 2 concept/.append style = {level distance = 95, sibling angle = 50}]
 		\node [concept, text = white, scale = 0.45] at (5,-3) (pattern) {{\LARGE Pattern Identification}} [clockwise from = 50]
 		child {node [concept, text = white, scale = 0.6] (med) {{\large Clustering}} [clockwise from=45]
-			child [concept color = matbluelight] {node [concept, scale = 0.55] {K-means}}
-			child [concept color = matbluelight] {node [concept, scale = 0.55] {Hierarchical}}}
+			child [concept color = matbluelight] {node [concept, scale = 0.55] {\large K-means}}
+			child [concept color = matbluelight] {node [concept, scale = 0.55] {\large Hierarchical}}}
 		child {node [concept, text = white, scale = 0.6] (gen) {{\large Dimension Reduction}}
-			child [concept color = matbluelight] {node [concept, scale = 0.55] {PCA}}
+			child [concept color = matbluelight] {node [concept, scale = 0.55] {\Large PCA}}
 			child [concept color = matbluelight] {node [concept, scale = 0.55] {Factor Analysis}}
-			child [concept color = matbluelight] {node [concept, scale = 0.55] {NMF}}};
+			child [concept color = matbluelight] {node [concept, scale = 0.55] {\Large NMF}}};
 		\end{scope}
  		\end{tikzpicture}	
 {\scriptsize{\color{hgray}{$\ \hspace{3em} ^{\star}$Not an exhaustive list of methods!}}}

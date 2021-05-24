@@ -1,62 +1,40 @@
 \setlength{\parskip}{\baselineskip} 
 \section{\bnmf}
 
-% \begin{frame}
-%  \frametitle{Table of Contents}
-% {\begin{itemize}
-%  {\color{gray}
-%      \item {Background}}
-%      {\color{gray}
-%          \item {PCP}}
-%          \begin{itemize}
-%          {\color{gray}
-%              \item Method
-%              \item Simulations
-%              \item Application}
-%          \end{itemize}
-%           {\color{matbluedark}
-%          \item \textbf{\bnmf}}
-%          \begin{itemize}
-%          {\color{gray}
-%              \item Method
-%              \item Simulations
-%              \item Application
-%              \item Health model}
-%          \end{itemize}
-%      {\color{gray}
-%      \item Conclusion
-%      }
-%  \end{itemize}}
-% \end{frame}
-
+\begin{frame}
+ \frametitle{Table of Contents}
+ \vspace{-1em}
+\textbf{
+\begin{itemize}
+ {\color{gray}
+     \item {Background}}
+     {\color{gray}
+         \item {PCP}}
+         \begin{itemize}
+         {\color{gray}
+             \item Method
+             \item Simulations
+             \item Application}
+         \end{itemize}
+          {\color{matbluedark}
+         \item \textbf{\bnmf}}
+         \begin{itemize}
+         {\color{gray}
+             \item Method
+             \item Simulations
+             \item Application}
+         \end{itemize}
+     {\color{gray}
+     \item \bnmf \& Child IQ
+     \item Conclusion
+     }
+ \end{itemize}}
+\end{frame}
 
 % 	\item[\checkmark] Non-parametric prior on $k$ helps with model selection
 % 	\item[\checkmark] Bayesian framework allows uncertainty propagation
 %       	\end{itemize}
 % }
-
-\frame{
-\frametitle{Bayesian non-parametric non-negative matrix factorization (BN$^{2}$MF)}
-\begin{columns}
-\column{.6\textwidth}
-\centering\color{matbluedark}{\LARGE\texttt{\textbf{BIG PICTURE}}}
-\vspace{.5\baselineskip}
-\begin{itemize}
-         \item Enhanced interpretability
-         \begin{itemize}
-	\item Parts-based (additive) {\color{matbluedark}non-negative} representation
-    \item No orthogonality constraint
-	\end{itemize}
-         \item Non-parametric prior chooses $k$
-         \item Quantifies uncertainty
-         \begin{itemize}
-	\item[\rightarrow] To propagate into health model
-	\end{itemize}
-        \end{itemize}
-\column{.4\textwidth}
-\centering\includesvg[scale=0.35]{figures/robot-svgrepo-com.svg}
-\end{columns}
-}
 
 \frame{
 \frametitle{Bayesian non-parametric non-negative matrix factorization (BN$^{2}$MF)}

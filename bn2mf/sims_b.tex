@@ -2,9 +2,10 @@
 %\section{\bnmf}
 
 \frame{\frametitle{Simulations}
-\vspace{2ex}
+%\begin{overlayarea}{\textwidth}{\textheight}
 \begin{columns}
 \column{0.5\textwidth}
+%\vspace{1}
 \begin{itemize}
 	\item Matrix size
 	\begin{itemize}
@@ -12,27 +13,45 @@
 		\end{itemize}
 	\item Low rank structure
 	\begin{itemize}
-		\item Scores: $\operatorname{lognormal}(0,1)$
-		\item Loading: proportions
-		\begin{itemize}
-		    \item[\aritem] Increasing complexity
-		\end{itemize}
-		\item Matrix product
 		\item Rank: 4
 		\end{itemize}
 	\item Increasing noise
 	\begin{itemize}
 		\item Low $\longrightarrow$ High
 		\end{itemize}
+	\item Compared with 
+		\begin{itemize}
+		\item PCA
+		\item Factor analysis
+		\item NMF
+			\end{itemize}
 \end{itemize}
-
 \column{0.5\textwidth}
-
+\vspace{1em}
 \begin{center}
-{\includegraphics[scale = 0.3]{figures/bn2mf/sim_corr_bn2mf.pdf}}
+\only<1>{\includegraphics[height=5cm]{figures/bn2mf/loadings_plot0.pdf}}
+\only<2>{\includegraphics[height=5cm]{figures/bn2mf/loadings_plot5.pdf}}
+\only<3>{\includegraphics[height=5cm]{figures/bn2mf/loadings_plot10.pdf}}
+\only<4>{\includegraphics[height=5cm]{figures/bn2mf/sim_corr_bn2mf.pdf}}
 \end{center}
 \end{columns}
+%\end{overlayarea}
 }
+
+% \frame{\frametitle{Simulations}
+% \vspace{2ex}
+% \begin{columns}
+% \column{0.5\textwidth}
+
+% \column{0.5\textwidth}
+
+% \begin{center}
+%       \only<1>{\includegraphics[scale = 0.3]{figures/pcp/scores_plot.pdf}}      \only<2>{\includegraphics[scale = 0.14]{figures/pcp/loadings_plot.pdf}}
+%       \only<3>{\includegraphics[scale = 0.35]{figures/patscore.png}}
+%       \only<4>{\includegraphics[scale = 0.3]{figures/pcp/sim_corr.pdf}}
+% \end{center}
+% \end{columns}
+% }
 
 \frame{
 \frametitle{Relative overall error}
@@ -43,4 +62,9 @@
 \frame{
 \frametitle{95\% variational confidence interval coverage}
 \centering{\includegraphics[scale = 0.4]{figures/bn2mf/coverage_heat_crop.pdf}}
+}
+
+\frame{
+\frametitle{What do confidence intervals tell us?}
+\centering{\includegraphics[scale = 0.41]{figures/bn2mf/ridges.pdf}}
 }

@@ -1,48 +1,88 @@
 \setlength{\parskip}{\baselineskip} 
-%\section{\bnmf}
+\section{Child IQ}
 
-% \begin{frame}
-%  \frametitle{Table of Contents}
-% {\begin{itemize}
-%  {\color{gray}
-%      \item {Background}}
-%      {\color{gray}
-%          \item {PCP}}
-%          \begin{itemize}
-%          {\color{gray}
-%              \item Method
-%              \item Simulations
-%              \item Application}
-%          \end{itemize}
-%           {\color{matbluedark}
-%          \item \textbf{\bnmf}}
-%          \begin{itemize}
-%          {\color{gray}
-%              \item Method
-%              \item Simulations
-%              \item Application
-%              {\color{matbluedark}\item \textbf{Health model}}}
-%          \end{itemize}
-%      {\color{gray}
-%      \item Conclusion
-%      }
-%  \end{itemize}}
-% \end{frame}
+\begin{frame}
+ \frametitle{Table of Contents}
+ \vspace{-1em}
+\textbf{
+\begin{itemize}
+ {\color{gray}
+     \item {Background}}
+     {\color{gray}
+         \item PCP}
+         \begin{itemize}
+         {\color{gray}
+             \item Method
+             \item Simulations
+             \item Application}
+         \end{itemize}
+          {\color{gray}
+         \item \bnmf}
+         \begin{itemize}
+         {\color{gray}
+             \item Method
+             \item Simulations
+             \item Application}
+         \end{itemize}
+    {\color{matbluedark}
+     \item \bnmf \& Child IQ}
+    {\color{gray}
+     \item Conclusion
+     }
+ \end{itemize}}
+\end{frame}
 
-% \frame{
-% \frametitle{Two-stage health model specifications}
-% }
+\frame{
+\frametitle{Mixture exposure \textit{in utero}}
+\begin{columns}
+\column{.5\textwidth}
+\begin{itemize}
+    \item Exposure in humans unique to each individual
+    \item Pregnant women especially vulnerable
+    \item Gestation a critical period of brain development
+    \item Prenatal exposures \aritem \  cognitive deficits in children
+\end{itemize}
+\column{.5\textwidth}
+\vspace{-2em}
+{\includegraphics[scale = 0.35]{figures/bn2mf/baby.png}}
+\end{columns}
+}
+
+\frame{
+\frametitle{Mixture population-level effect}
+%\vspace{-0.5em}
+\begin{center}
+{\includegraphics[scale = 0.39]{figures/bn2mf/braun.png}}
+\end{center}
+\vspace{-3.5em}
+\begin{flushright}
+\tiny{\color{hgray}{Braun et al., 2017}}\phantom{xxxxxxxxxxxxxxxxxx}
+\end{flushright}
+\vspace{-1.5em}
+\hspace{1em}
+\centering{\normalsize\textbf{\emph{Small downward shift has substantial population impact}}}
+}
 
 \frame{
 \frametitle{Two-stage health model specifications}
 \begin{itemize}
     \item {\color{matbluedark}\textbf{Outcome of interest:}} WISC-IV Full Scale Child IQ at age 7
     \item {\color{matbluedark}\textbf{Exposure of interest:}} \bnmfc-identified EDC patterns
-    \item {\color{matbluedark}\textbf{Covariates}}
-    \begin{itemize}
-    \item Maternal age, IQ, education, prenatal alcohol consumption, marital status, HOME score, and material hardship
-    \end{itemize}
+    \item {\color{matbluedark}\textbf{Covariates:}} {\small Maternal age, IQ, education, prenatal alcohol consumption, marital status, HOME score, \& material hardship}
     \item {\color{matbluedark}\textbf{Sex-specific analysis}}
+    \end{itemize}
+}
+
+\frame{
+\frametitle{Two-stage health model specifications}
+\begin{equation*}
+\begin{aligned}
+Y_i & = \beta_0 + \beta_Z Z_i + \beta_{S} S_i 
++ \beta_{Z \cdot S} \left(Z_i S_i\right) 
++ \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i \\
+\end{aligned}
+\end{equation*}
+\begin{itemize}
     \item {\color{matbluedark}\textbf{Traditional multivariable regression model}}
 \vspace{-1ex}
 \begin{equation*}
@@ -57,9 +97,6 @@
 Z_i & \sim \operatorname{Gamma}(\widehat{\alpha}_{W i}, \widehat{\beta}_{W i}) 
     \times \operatorname{Gamma}(\widehat{\alpha}_{\mathbf{a} i},
     \widehat{\beta}_{\mathbf{a} i})  \\
-Y_i & = \beta_0 + \beta_Z Z_i + \beta_{S} S_i 
-+ \beta_{Z \cdot S} \left(Z_i S_i\right) 
-+ \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i \\
 \end{aligned}
 \end{equation*}
 }
@@ -79,13 +116,11 @@ Y_i & = \beta_0 + \beta_Z Z_i + \beta_{S} S_i
  & Term & $\beta$ & 95\% CI & $\beta$ & 95\% CrI \\ 
 \hline 
 \\[-3ex] \hline
-\multirow{3}{1.83cm}{Phthalates + BPA} & Females & -3.4  & (-6.5, -0.4) &  -3.4 & (-6.7, -0.4) \\ 
+\multirow{2}{1.83cm}{Phthalates + BPA} & Females & -3.4  & (-6.5, -0.4) &  -3.4 & (-6.7, -0.4) \\ 
                            & Males & -0.4 & (-2.4, \ \ 1.7)   &  -0.4 & (-2.5, \ \ 1.7) \\ 
-                           & Interaction term & -3.1 & (-6.7, \ \ 0.6)   &  -3.0 & (-6.9, \ \ 0.6) \\ 
 \hline
-\multirow{3}{1.83cm}{Phenols + MEP} & Females          & 2.0   & (-0.3, \ \ 4.2) & 2.1 & (-0.3, \ \ 4.5) \\ 
-                           & Males            & -0.8  & (-2.7, \ \ \ 1.1) & -0.8 & (-2.8, \ \ \ 1.1) \\ 
-                           & Interaction term & 2.8   & (-0.2, \ \ 5.8) & 2.9 & (-0.1, \ \ 6.0) \\ 
+\multirow{2}{1.83cm}{Phenols + MEP} & Females          & 2.0   & (-0.3, \ \ 4.2) & 2.1 & (-0.3, \ \ 4.5) \\ 
+                           & Males            & -0.8  & (-2.7, \ \ \ 1.1) & -0.8 & (-2.8, \ \ \ 1.1) \\
 \hline 
 \\[-3ex] \hline \\[-2.5ex]
 \end{tabular} 
@@ -96,5 +131,26 @@ Y_i & = \beta_0 + \beta_Z Z_i + \beta_{S} S_i
 
 \frame{
 \frametitle{Are \bnmfc-identified patterns associated with child IQ?}
-\Huge YES!
+\begin{columns}
+\column{.45\textwidth}
+\includegraphics[scale=.2]{figures/yes-1.jpg}
+\column{.55\textwidth}
+\vspace{1em}
+\begin{changemargin}{-1em}{0em}
+\begin{itemize}
+    \item Phthalate + BPA pattern associated with lower female IQ
+    \begin{itemize}
+        \item[\aritem] Joins large body of research
+        \item[\aritem] EDC sex-specific effects on neurodevelopment
+    \end{itemize}
+    \item EDC exposure is \textit{modifiable}
+    \begin{itemize}
+        \item[\aritem] Easier to act on pattern than individual EDC
+        \item[\aritem] Targeted public health and regulatory action
+        \item[\aritem] Comprehensive regulation of chemicals that co-occur
+    \end{itemize}
+\end{itemize}
+\end{changemargin}
+\end{columns}
 }
+

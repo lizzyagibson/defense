@@ -3,7 +3,8 @@
 
 \frame{\frametitle{PCP-LOD application}
 \begin{columns}
-\column{0.6\textwidth}
+\column{0.55\textwidth}
+\vspace{1em}
 \begin{itemize}
     \item {\color{matbluedark}\textbf{Study Population}}
     \begin{itemize}
@@ -21,8 +22,7 @@
         \item Do patterns correspond with known sources or behaviors leading to exposure?
     \end{itemize}
 \end{itemize}
-
-\column{0.5\textwidth}
+\column{0.45\textwidth}
 \begin{center}
     \includegraphics[scale = 0.275]{figures/nhanes_apple_color_tagline.jpg}
 \end{center}
@@ -31,6 +31,7 @@
 
 \frame{\frametitle{PCP-LOD application: POP detection}
 \begin{center}
+\vspace{2em}
 	\includegraphics[scale=0.28]{figures/pcp/pop_detect.pdf}
 \end{center}
 }
@@ -44,10 +45,7 @@
 
 % low rank
 \frame{\frametitle{NHANES results: 3 underlying patterns of POP exposure}
-\vspace{-1.25ex}
-\begin{center}
-	\includegraphics[scale=0.28]{figures/pcp/loadings.pdf}
-\end{center}
+\includegraphics[scale=0.28]{figures/pcp/loadings.pdf}
 }
 
 % sparse
@@ -56,4 +54,26 @@
 \begin{center}
 	\includegraphics[scale=0.32]{figures/pcp/sparse_events.pdf}
 \end{center}
+}
+
+\frame{
+\frametitle{Principal component pursuit}
+\begin{columns}
+\column{.55\textwidth}
+\ \\
+\vspace{2em}
+\centering\color{matbluedark}{\LARGE\texttt{\textbf{BIG PICTURE}}}
+\vspace{.5\baselineskip}
+\begin{itemize}
+         \item Patterns not influenced by outliers
+         \item Extreme events separated, \\ not discarded
+         \item Novel $<$ LOD penalty
+         \item Potential for enhanced interpretability
+         \item No parameter tuning
+        \end{itemize}
+\column{.45\textwidth}
+\ \\ 
+\vspace{2em}
+\centering\includesvg[scale=0.35]{figures/robot-svgrepo-com.svg}
+\end{columns}
 }
