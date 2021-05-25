@@ -45,7 +45,9 @@
 
 \frame{
 	\frametitle{Patterns represent known exposure sources}
-\begin{columns}[t]
+\vspace{1.75em}
+\begin{changemargin}{-1.5em}{-1.5em}
+\begin{columns}
 \column{0.5\textwidth}
 \vspace{-1.5em}
 \LARGE
@@ -59,6 +61,7 @@ Pattern 1:
 Pattern 2:
 \end{center}
 \end{columns}
+\end{changemargin}
 \vspace{1ex}
 \begin{changemargin}{-1.5em}{-1.5em}
 \begin{columns}
@@ -80,20 +83,28 @@ Pattern 2:
 \end{tcolorbox}
 \end{columns}
 \end{changemargin}
-\vspace{-1ex}
+\vspace{0.5ex}
+\begin{changemargin}{-1.5em}{-1.5em}
 \begin{columns}[b]
 \column{0.5\textwidth}
 \LARGE
 \begin{center}
 \large
-\textbf{$\Rightarrow$ Food packaging}
+\includesvg[scale=0.03]{figures/bn2mf/canned-food.svg}  {Food packaging}  \includesvg[scale=0.03]{figures/bn2mf/canned-food.svg}
 \end{center}
 \column{0.5\textwidth}
 \large
 \begin{center}
-\textbf{$\Rightarrow$ Personal care products}
+\includesvg[scale=0.03]{figures/bn2mf/shampoo-svgrepo-com.svg}  {Personal care products}  \includesvg[scale=0.03]{figures/bn2mf/shampoo-svgrepo-com.svg}
 \end{center}
 \end{columns}
+\end{changemargin}
+\vspace{-1em}
+\begin{center}
+\tiny
+\textbf{{\color{matbluedark}\bullet \ Phthalates} \
+{\color{cloudorange}\bullet \ Phenols}}
+\end{center}
 }
 
 \frame{
@@ -110,7 +121,7 @@ Pattern 2:
 	\item Parts-based (additive) {\color{matbluedark}non-negative} representation
     \item No orthogonality constraint
 	\end{itemize}
-         \item Non-parametric prior chooses $k$
+         \item Non-parametric prior chooses the number of patterns
          \item Quantifies uncertainty
          \begin{itemize}
 	\item[\rightarrow] To propagate into health model
