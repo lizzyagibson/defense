@@ -40,9 +40,22 @@
     \begin{itemize}
         \item {\color{matbluedark}Low rank matrix} estimates consistent exposure patterns
         \item {\color{matbluedark}Sparse matrix} identifies unique events \\
-        $$\min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S-X\|_{F}^{2}$$
+        %
+        \centering\begin{tcolorbox}[colframe=matbluedark, colback=white, width=6cm, height=1.2cm,halign=center,valign=center]
+        \begin{center}
+        \only<1>{\vspace{1ex}$$\hspace{-1ex} \min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S-X\|_{F}^{2}$$}
+        % %
+        \only<2>{\vspace{1ex}$$\hspace{-1ex} \min _{L, S} \mathcolorbox{yellow}{\|L\|_{\star}} + \lambda\|S\|_{1} + \frac{\mu}{2}\|L+S-X\|_{F}^{2}$$}
+        % %
+        \only<3>{\vspace{1ex}$$\hspace{-1ex} \min _{L, S} \|L\|_{\star} + \mathcolorbox{yellow}{\lambda\|S\|_{1}} + \frac{\mu}{2}\|L+S-X\|_{F}^{2}$$}
+        % %
+        \only<4>{\vspace{-1.9ex}$$\hspace{-1ex} \min _{L, S} \|L\|_{\star} + \lambda\|S\|_{1} + \mathcolorbox{yellow}{\frac{\mu}{2}\|L+S-X\|_{F}^{2}}$$}
+        % %
+        \only<5>{\vspace{-2.4ex}$$\hspace{-1ex}\min _{L, S} \|L\|_{\star} + \mathcolorbox{yellow}{\lambda}\|S\|_{1} + \frac{\mathcolorbox{yellow}{\mu}}{2}\|L+S-X\|_{F}^{2}$$}
+        \end{center}
+        \end{tcolorbox}
     \end{itemize}
-    \item Robust to noisy/corupt data
+    \item Robust to noisy/corrupt data
     \begin{itemize}
         \item Not influenced by outlying values
     \end{itemize}

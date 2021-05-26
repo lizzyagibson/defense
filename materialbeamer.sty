@@ -19,6 +19,7 @@
 \usepackage{braket}
 \usepackage{listings}
 \usepackage{tikz}
+\usepackage{color,soul} % for highlighting
 \usetikzlibrary{mindmap,backgrounds}
 \usepackage{float}
 \usepackage{wrapfig}
@@ -32,12 +33,14 @@
 \usepackage{emoji}
 \usepackage{svg}
 \usepackage{bold-extra}
+\usepackage{calc}
 
 % My notation
 \newcommand{\PM}{PM$_{2.5}$ }
 \newcommand{\mugm}{$\mu$g/m$^3$}
 \newcommand{\bnmf}{BN$^{2}$MF }
 \newcommand{\bnmfc}{BN$^{2}$MF}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}} % highlight math
 
 % Prob notation from Carter
 \newcommand{\Paren}[1]{\ensuremath{\left ( #1 \right )}}
