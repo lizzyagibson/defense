@@ -75,13 +75,21 @@
 
 \frame{
 \frametitle{Two-stage health model specifications}
-\begin{equation*}
-\begin{aligned}
-Y_i & = \beta_0 + \beta_Z Z_i + \beta_{S} S_i 
-+ \beta_{Z \cdot S} \left(Z_i S_i\right) 
-+ \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i \\
-\end{aligned}
-\end{equation*}
+\centering\begin{tcolorbox}[colframe=matbluedark, colback=white,halign=center,width=9cm, height=1.25cm]
+\only<1>{\vspace{-1.25em}$$Y_i = \beta_0 + \beta_Z Z_i + \beta_{S} S_i + \beta_{Z \cdot S} \left(Z_i S_i\right) + \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i$$}
+%%
+\only<2>{\vspace{-1.25em}$$\mathcolorbox{yellow}{Y_i} = \beta_0 + \beta_Z Z_i + \beta_{S} S_i + \beta_{Z \cdot S} \left(Z_i S_i\right) + \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i$$}
+%%
+\only<3>{\vspace{-1.25em}$$Y_i = \beta_0 + \mathcolorbox{yellow}{\beta_Z Z_i} + \beta_{S} S_i + \beta_{Z \cdot S} \left(Z_i S_i\right) + \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i$$}
+%%
+\only<4>{\vspace{-1.25em}$$Y_i = \beta_0 + \beta_Z Z_i + \mathcolorbox{yellow}{\beta_{S} S_i} + \beta_{Z \cdot S} \left(Z_i S_i\right) + \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i$$}
+%%
+\only<5>{\vspace{-1.25em}$$Y_i = \beta_0 + \beta_Z Z_i + \beta_{S} S_i + \mathcolorbox{yellow}{\beta_{Z \cdot S} \left(Z_i S_i\right)} + \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i$$}
+%%
+\only<6>{\vspace{-1.25em}$$Y_i = \beta_0 + \beta_Z Z_i + \beta_{S} S_i + \beta_{Z \cdot S} \left(Z_i S_i\right) + \mathcolorbox{yellow}{\mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X}} + \varepsilon_i$$}
+%%
+\only<7>{\vspace{-1.25em}$$Y_i = \beta_0 + \beta_Z Z_i + \beta_{S} S_i + \beta_{Z \cdot S} \left(Z_i S_i\right) + \mathbf{X}_{i}^T\boldsymbol{\beta}_\mathbf{X} + \varepsilon_i$$}
+\end{tcolorbox}
 \vspace{-1ex}
 \begin{itemize}
     \item {\color{matbluedark}\textbf{Traditional multivariable regression model}}
