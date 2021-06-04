@@ -38,13 +38,16 @@
 \column{.5\textwidth}
 \begin{itemize}
     \item Exposure in humans unique to each individual
+    \pause
     \item Pregnant women especially vulnerable
+    \pause
     \item Gestation a critical period of brain development
+    \pause
     \item Prenatal exposures \aritem \  cognitive deficits in children
 \end{itemize}
 \column{.5\textwidth}
 \vspace{-2em}
-{\includegraphics[scale = 0.35]{figures/bn2mf/baby.png}}
+{\onslide\includegraphics[scale = 0.35]{figures/bn2mf/baby.png}}
 \end{columns}
 }
 
@@ -58,9 +61,11 @@
 \begin{flushright}
 \tiny{\color{hgray}{Braun et al., 2017}}\phantom{xxxxxxxxxxxxxxxxxx}
 \end{flushright}
-\vspace{-1.5em}
-\hspace{1em}
-\centering{\normalsize\textbf{\emph{Small downward shift has substantial population impact}}}
+\vspace{-1.75em}
+\pause
+\begin{tcolorbox}[boxrule=2pt,colframe=matbluedark, colback=white,valign=center,height=2em]
+\centering{\textbf{Small downward shift has substantial population impact}}
+\end{tcolorbox}
 }
 
 \frame{
@@ -95,7 +100,7 @@
     \item {\color{matbluedark}\textbf{Traditional multivariable regression model}}
 %\vspace{-1ex}
 \begin{equation*}
-\hspace{-6cm} Z_i = \mathbb{E}\left[\widehat{W}_i\times \widehat{\mathbf{a}}_i\right]
+\hspace{-6cm} Z_i = \mathbb{E}\left[\widehat{W}_i\right] \times \mathbb{E}\left[\widehat{\mathbf{a}}_i\right]
 \end{equation*}
 %\vspace{-1.5em}   
 \item {\color{matbluedark}\textbf{Bayesian hierarchical model}}
@@ -109,6 +114,18 @@
 \frame{
 \frametitle{Are \bnmfc-identified patterns associated with child IQ?}
 \includegraphics[scale=.57]{figures/bn2mf/modelplot.pdf}
+\pause
+\begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+        \node[
+            draw=red,
+            ultra thick,
+            text width=3.25ex,
+            text height=3.1cm,
+            align=center,
+            anchor=center
+            ] at (-1.735cm,-1cm) {};
+    \end{tikzpicture}
 }
 
 \frame{

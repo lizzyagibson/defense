@@ -65,6 +65,20 @@
 }
 
 \frame{
-\frametitle{What do confidence intervals tell us?}
+\frametitle{What do variational confidence intervals tell us?}
 \centering{\includegraphics[scale = 0.41]{figures/bn2mf/ridges.pdf}}
+\pause
+\begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+        \node[rounded corners,
+            draw=matbluedark,
+            ultra thick,
+            fill=white,
+            %font=\LARGE,
+            text width=0.3\textwidth,
+            align=center,
+            anchor=center
+            ] at (3.5cm,-1.5ex) {VCI give a range of possible values instead of a point estimate.
+            };
+    \end{tikzpicture}
 }

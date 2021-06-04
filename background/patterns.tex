@@ -26,18 +26,20 @@
 \begin{columns}
 \column{0.5\textwidth}
 \vspace{2ex} \\
-    \begin{itemize}
+    {\begin{itemize}
         \item We are exposed to hundreds (thousands?) of chemicals at any single time point
+        \pause
         \item Traditionally, epi studies have focused on single-chemical analyses
         \begin{itemize}
             \item This does not represent reality
         \end{itemize}
+        \pause
         \item The {\color{matbluedark} combination} of exposures likely induces different responses 
-    \end{itemize}
+    \end{itemize}}
 \column{0.5\textwidth}
 \begin{center}
 \begin{changemargin}{-1.5em}{-1em}
-	\includegraphics[scale=0.325]{figures/europa_image.png} \\
+	\onslide\includegraphics[scale=0.325]{figures/europa_image.png} \\
 \end{changemargin}
 \vspace{-1em}
 \raggedleft
@@ -54,9 +56,12 @@
 \begin{changemargin}{-1em}{0em}
 \begin{itemize}
     \item Defined by biological mechanism
+    \pause
     \item Interfere with hormonal systems
+    \pause
     \item Disrupt processes critical for brain development
     \vspace{1em}
+    \pause
     \item Ubiquitous environmental exposure
     \begin{itemize}
         \item Consumer products
@@ -67,7 +72,7 @@
 \end{changemargin}
 \column{.55\textwidth}
 \begin{changemargin}{-1em}{0em}
-%\vspace{1em}
+\onslide
 \begin{center}
 {\includegraphics[scale = 0.23]{figures/un_edc.pdf}}
 \end{center}
@@ -116,6 +121,7 @@
 				\item Sources
 				\item Behaviors
 			\end{itemize}
+			\pause
 			\item If we link these patterns to (multiple) adverse health outcomes
 			\begin{itemize}
 				\item Efficient regulations
@@ -126,6 +132,7 @@
 		\column{0.6\textwidth}
 			\vspace{2ex}
 			\begin{changemargin}{0em}{-1em}
+			\onslide
 \begin{tikzpicture}[mindmap, grow cyclic,scale=0.8]
 \begin{scope}[mindmap, concept color = white, text = matbluedark,
         	level 1 concept/.append style = {level distance = 92, sibling angle = 72}]
@@ -141,18 +148,46 @@
 \end{columns}
 }
 
+% \frame{
+% 	\frametitle{Potential pattern recognition questions}
+% \begin{columns}
+% \column{0.55\textwidth}
+% \begin{itemize}
+%     \item Are there subgroups with similar exposure profiles?
+%     \item Are certain combinations of exposure harmful?
+%     \item 
+% \end{itemize}
+% \column{0.4\textwidth}
+% \begin{center}
+% 	\includesvg[scale=0.15]{figures/question-svgrepo-com.svg}
+% 	\hspace{1ex} \includesvg[scale=0.15]{figures/question-svgrepo-com.svg} \\
+% 	\vspace{1ex}
+% 	\includesvg[scale=0.15]{figures/question-svgrepo-com.svg}
+% 	\hspace{1ex} \includesvg[scale=0.15]{figures/question-svgrepo-com.svg} \\
+% 	\vspace{1ex}	\includesvg[scale=0.15]{figures/question-svgrepo-com.svg}
+% 	\hspace{1ex} \includesvg[scale=0.15]{figures/question-svgrepo-com.svg} \\
+% \end{center}
+% \end{columns}
+% }
+
 \frame{
-	\frametitle{Existing exposure pattern recognition methods}
+	\frametitle{Limitations of existing exposure pattern recognition methods}
 \begin{columns}
 		\column{0.55\textwidth}
         \begin{itemize}
          \item Choice of $k$ patterns
+         \pause
          \item Outlying values
+         \pause
          \item Chemicals $<$ LOD
+         \pause
          \item $+/-$ solution 
+         \pause
          \item Orthogonality constraint
+         \pause
          \item No measure of uncertainty
         \end{itemize}
+        \pause
 \vspace{1em}
 \centering$\Longrightarrow$ Proposed solutions: \\
 \vspace{1ex}
@@ -161,12 +196,12 @@
 \column{0.5\textwidth}
 \ \\
 \vspace{1em}
-%\centering
+\onslide
 \begin{tikzpicture}[mindmap, grow cyclic,scale=0.5]
 		\begin{scope}[mindmap, concept color = matbluedark, text = white, 
 		level 1 concept/.append style = {level distance = 125, sibling angle = 90},
 		level 2 concept/.append style = {level distance = 95, sibling angle = 50}]
-		\node [concept, text = white, scale = 0.45] at (5,-3) (pattern) {{\LARGE Pattern Identification}} [clockwise from = 50]
+		\node [concept, text = white, scale = 0.45] at (5,-3) (pattern) {{\LARGE Pattern Recognition}} [clockwise from = 50]
 		child {node [concept, text = white, scale = 0.6] (med) {{\large Clustering}} [clockwise from=45]
 			child [concept color = matbluelight] {node [concept, scale = 0.55] {\large K-means}}
 			child [concept color = matbluelight] {node [concept, scale = 0.55] {\large Hierarchical}}}
@@ -180,16 +215,6 @@
 \end{columns}
 }
 
-% \frame{
-% 	\frametitle{Bird's-eye (over)view of existing mixtures methods}
-
-% 	\raggedleft
-% 	{\small\color{hgray}$^{\star}$Not an a exhaustive list of methods!!}	\\
-% 	\vspace{-3ex}
-	
-% 	\centering
-% 	\includegraphics[scale=0.135]{figures/overview} \\
-% }
 
 % \frame{
 % 	\frametitle{Comparing results across methods}
