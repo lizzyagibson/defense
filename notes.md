@@ -769,7 +769,7 @@ A final next step for both methods is that we plan to develop and share user-fri
 
 we'll include detailed documentation for guidance on proper use, inputs, interpretation, and limitations of both methods.
 
-we want to provide this resource so that other researchers interested in pattern idenification in environmental mixtures can easily apply either method
+we want to provide this resource so that other researchers interested in pattern identification in environmental mixtures can easily apply either method
 
 ###### ##########
 ## Slide 42
